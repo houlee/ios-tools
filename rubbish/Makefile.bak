@@ -1,0 +1,21 @@
+DIST = rabish
+CC = gcc
+
+JNI_CFLAGS= -I/usr/include/
+CFLAGS =  -Wall -O2  $(JNI_CFLAGS)
+LDFLAGS = -L. 
+SHARED = 
+OBJECTS = rabish.o 
+LIBS =
+
+all: $(DIST)
+$(DIST):$(OBJECTS) $(LIBS)
+	$(CC)  -o $@ $^ $(LDFLAGS)
+#strip $(DIST)
+
+%.o:%.c
+	$(CC) $(CFLAGS) -c $< -o $*.o
+
+clean:
+	rm -f $(OBJECTS) $(DIST) $(TEST)
+	rm -f *.o

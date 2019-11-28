@@ -1,0 +1,3 @@
+
+int abcd,defege;
+int aaff,aiefe=0;
