@@ -20,6 +20,17 @@ x32+x26+x23+x22+x16+x12+x11+x10+x8+x7+x5+x4+x2+x+1
 CRC线上校验数据获取
 https://www.lammertbies.nl/comm/info/crc-calculation.html
 
+Code文件数据说明：
+0000000249454E440102F2CB7741
+Length(长度)：00000002  2个字节
+Chunk Type Code(数据块类型码)：49454E44  IEND
+Chunk Data(数据块数据): 0102
+CRC(循环冗余检测):F2CB7741  在网页（https://www.lammertbies.nl/comm/info/crc-calculation.html）上填上 49454E440102 ，生成crc32，获得此数据
+
 base64的字符定义
 const char * base64char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
 实际使用的字符串，会根据右移位数进行变化
+
+pichack-nfn.exe说明：
+不对文件名进行base64编码，也不修改png文件头，只修改文件md5，并给文件名加前缀
+因为苹果任务这部分base64编码的文件有隐藏代码嫌疑，回复 2.3.1
